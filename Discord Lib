@@ -3177,8 +3177,8 @@ function DiscordLib:Window(text)
 			end
 
             function LabelFunctions:UpdateLabel(NewText)
-                    Label.Text = NewText
-                end
+                Label.Text, LabelTitle.Text = NewText
+            end
                 return LabelFunctions
             end
 
