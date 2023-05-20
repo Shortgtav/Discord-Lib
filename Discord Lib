@@ -1,3 +1,4 @@
+
 local DiscordLib = {}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -3173,7 +3174,13 @@ function DiscordLib:Window(text)
 				
 				ChannelHolder.CanvasSize = UDim2.new(0,0,0,ChannelHolderLayout.AbsoluteContentSize.Y)
 			end
-			
+
+            function ChannelContent:UpdateLabel(NewText)
+                    Label.Text = NewText
+                end
+                return ChannelContent
+            end
+
 			function ChannelContent:Bind(text, presetbind, callback)
 				local Key = presetbind.Name
 				local Keybind = Instance.new("TextButton")
