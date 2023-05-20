@@ -3147,7 +3147,6 @@ function DiscordLib:Window(text)
 			function ChannelContent:Label(text)
 				local Label = Instance.new("TextButton")
 				local LabelTitle = Instance.new("TextLabel")
-                local LabelFunctions = {}
 
 				Label.Name = "Label"
 				Label.Parent = ChannelHolder
@@ -3157,7 +3156,7 @@ function DiscordLib:Window(text)
 				Label.Size = UDim2.new(0, 401, 0, 30)
 				Label.AutoButtonColor = false
 				Label.Font = Enum.Font.Gotham
-				Label.Text = ""
+				Label.Text = {}
 				Label.TextColor3 = Color3.fromRGB(255, 255, 255)
 				Label.TextSize = 14.000
 
@@ -3175,12 +3174,6 @@ function DiscordLib:Window(text)
 				
 				ChannelHolder.CanvasSize = UDim2.new(0,0,0,ChannelHolderLayout.AbsoluteContentSize.Y)
 			end
-
-            function LabelFunctions:UpdateLabel(NewText)
-                Label.Text, LabelTitle.Text = NewText
-            end
-                return LabelFunctions
-            end
 
 			function ChannelContent:Bind(text, presetbind, callback)
 				local Key = presetbind.Name
